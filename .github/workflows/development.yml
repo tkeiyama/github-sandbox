@@ -1,0 +1,26 @@
+name: test-environments
+
+on:
+  workflow_dispatch:
+
+jobs:
+  development:
+    runs-on: ubuntu-slim
+    environment:
+      name: development
+    steps:
+      - run: echo "env ${{ secrets.ENVIRONMENT }}"
+
+  staging:
+    runs-on: ubuntu-slim
+    environment:
+      name: staging
+    steps:
+      - run: echo "env ${{ secrets.ENVIRONMENT }}"
+
+  production:
+    runs-on: ubuntu-slim
+    environment:
+      name: production
+    steps:
+      - run: echo "env ${{ secrets.ENVIRONMENT }}"
